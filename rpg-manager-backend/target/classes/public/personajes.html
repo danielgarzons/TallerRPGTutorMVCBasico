@@ -1,0 +1,63 @@
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gestor de RPG - Programación Multinivel</title>
+        <style>
+            body {
+                background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://img.magnific.com/vector-gratis/fondo-templo-juego-dibujos-animados-campo-batalla-piedra_107791-20034.jpg?semt=ais_hybrid&w=740&q=80');
+                background-size: cover;
+                background-repeat: no-repeat;
+                
+                opacity: 0.9;
+
+            }
+        </style>
+    <!DOCTYPE html>
+    
+    </head>
+    <body style ="font-family: Arial, sans-serif; text-align: center; padding-top: 50px;">
+            <h1 style="color: rgb(81, 255, 0); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Gestor de Personajes</h1>
+            <h2 style="color: rgb(131, 248, 248); text-decoration: underline;">Bienvenido a tu gestor. ¡Un nuevo personaje te espera!</h2>
+        
+        
+        <form action="/personajes" method="POST">
+        
+        <div class="grupo-nombre">
+            <label for="nombre" style="font-size: 20px; color: rgb(255, 255, 255)">Nombre del personaje:</label>   
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre del Personaje">
+        </div>
+        <br>
+        
+        <div class="grupo-clase">
+            <label for="clase" style="font-size: 20px; color: rgb(255, 255, 255)">Clase del personaje:</label>
+            <select style="background-color: #333; color: white; border: 1px solid #555;" id="clase" name="clase">
+                <option value="">Selecciona una clase</option>
+                <option value="guerrero">Guerrero</option>
+                <option value="mago">Mago</option>
+                <option value="arquero">Arquero</option>
+            </select>
+        </div>
+        <br>
+
+        <div class="grupo-nivel">
+            <label for="nivel" style="font-size: 20px;color: rgb(255, 255, 255)">Nivel del personaje:</label>   
+            <input type="text" id="nivel" name="nivel" placeholder="Nivel del Personaje">
+        </div>
+        <br>
+
+        <button style="font-size: 20px; background-color: rgb(255, 156, 0); color: white; border: none; padding: 10px 20px; cursor: pointer;" type="submit">Crear Personaje</button>
+
+        </form>
+        <br>
+
+        <script>
+            // Mensaje de éxito al crear un personaje
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('creado') === 'true') {
+                alert("¡Personaje creado exitosamente!");
+            }
+        </script>
+
+    </body>
+</html>
